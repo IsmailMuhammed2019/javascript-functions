@@ -1,4 +1,7 @@
-function seed() {}
+function seed() {
+  return Object.values(arguments);
+}
+seed();
 
 function same([x, y], [j, k]) {}
 
