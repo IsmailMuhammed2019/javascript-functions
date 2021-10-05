@@ -22,7 +22,21 @@ const printCell = (cell, state) => {
 };
 
 
-const corners = (state = []) => {};
+const corners = (state = []) => {
+  if (state.length === 0){
+    return {
+      topRight: [0, 0],
+      bottomLeft: [0, 0]
+    };
+  }
+
+  const xs = state.map(([x, _]));
+  const ys = state.map(([_, y]));
+  return {
+    topRight: [Math.max(...xs), Math.max(...ys)],
+    bottomLeft: [Math.max(...xs), Math.max(...ys)]
+  };
+};
 
 const printCells = (state) => {};
 
