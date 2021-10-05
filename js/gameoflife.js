@@ -13,11 +13,7 @@ same([0,0], [0, 0]);
 
 
 // The game state to search for `cell` is passed as the `this` value of the function.
-function contains(cell) {
-  return this.some((c) => same(c, cell));
-}
-
-contains([[3,4], [4,4]])
+function contains(cell) {};
 
 const printCell = (cell, state) => {};
 
