@@ -51,8 +51,9 @@ const printCells = (state) => {
       console.log(row.join(' '));
       return row.join(' ');
   }
-  
+
 };
+
 printCells([[3,2],[2,3],[3,3],[3,4],[4,4]]);
 
 
