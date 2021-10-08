@@ -49,7 +49,7 @@ const printCells = (state) => {
           row.push(printCell([x,y], state));
       }
       console.log(row.join(' '));
-      return row.join('');
+      return row.join(' ');
   }
   
 };
