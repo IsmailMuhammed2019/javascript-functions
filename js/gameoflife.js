@@ -41,7 +41,20 @@ const corners = (state = []) => {
 corners([[1,2], [4,1]]);
 
 
-const printCells = (state) => {};
+const printCells = (state) => {
+  const {bottomLeft,topRight} = corners(state);
+  for (let y = topRight[1]; y >= bottomLeft[1]; y--) {
+      let row = [];
+      for (let x = bottomLeft[0]; x <= topRight[0]; x++) {
+          row.push(printCell([x,y], state));
+      }
+      console.log(row.join(' '));
+      return row.join('');
+  }
+  
+};
+printCells([[3,2],[2,3],[3,3],[3,4],[4,4]]);
+
 
 const getNeighborsOf = ([x, y]) => {};
 
