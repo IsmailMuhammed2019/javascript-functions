@@ -61,12 +61,11 @@ const sum = ([x,y], [j,k]) => [x+j, y+k];
 const getNeighborsOf = ([x,y]) => {
   const neighborDeltas = [
       [-1,1],  [0,1],  [1,1],
-      [-1,0],  /* */,  [1,0],
+      [-1,0],  /* */   [1,0],
       [-1,-1], [0,-1], [1,-1]
   ];
-  return neighborDeltas.map((d) => sum(d, [x,y])); 
+  return neighborDeltas.map((d) => sum(d, [x,y]));
 };
-
 getNeighborsOf([2,2]);
 
 const getLivingNeighbors = (cell, state) => {
@@ -74,10 +73,7 @@ const getLivingNeighbors = (cell, state) => {
       .filter((n) => contains.bind(state)(n));
 };
 
-const willBeAlive = (cell, state) => {
-  
-
-};
+const willBeAlive = (cell, state) => {};
 
 const calculateNext = (state) => {};
 
