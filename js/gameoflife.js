@@ -56,12 +56,28 @@ const printCells = (state) => {
 
 printCells([[3,2],[2,3],[3,3],[3,4],[4,4]]);
 
+const sum = ([x,y], [j,k]) => [x+j, y+k];
 
-const getNeighborsOf = ([x, y]) => {};
+const getNeighborsOf = ([x,y]) => {
+  const neighborDeltas = [
+      [-1,1],  [0,1],  [1,1],
+      [-1,0],  /* */,  [1,0],
+      [-1,-1], [0,-1], [1,-1]
+  ];
+  return neighborDeltas.map((d) => sum(d, [x,y])); 
+};
 
-const getLivingNeighbors = (cell, state) => {};
+getNeighborsOf([2,2]);
 
-const willBeAlive = (cell, state) => {};
+const getLivingNeighbors = (cell, state) => {
+  return getNeighborsOf(cell)
+      .filter((n) => contains.bind(state)(n));
+};
+
+const willBeAlive = (cell, state) => {
+  
+
+};
 
 const calculateNext = (state) => {};
 
